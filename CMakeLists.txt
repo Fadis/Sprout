@@ -35,5 +35,7 @@ pkg_check_modules(OpenCV opencv)
 
 INCLUDE_DIRECTORIES( ${CMAKE_CURRENT_SOURCE_DIR} ${Boost_INCLUDE_DIRS} )
 link_directories( ${Boost_LIBRARY_DIRS} )
-subdirs( sprout libs tools cmake )
-
+subdirs( sprout tools cmake )
+if( NOT DEFINED NDEBUG )
+  subdirs( libs )
+endif( NOT DEFINED NDEBUG )
